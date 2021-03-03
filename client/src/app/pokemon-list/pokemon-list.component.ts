@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from '../pokemon-card/pokemon';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class PokemonListComponent implements OnInit {
   pokemons: any[] =[];
+  pokemon: Pokemon;
 
   constructor(private dataService: DataService) { }
 

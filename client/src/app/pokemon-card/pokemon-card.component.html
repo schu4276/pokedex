@@ -1,0 +1,6 @@
+<mat-card class="pokemon-card" *ngIf="this.pokemon">
+  <mat-card-header class="pokemon-names" >
+    {{this.pokemon.name}}
+    <img src="{{this.pokemon.sprites.front_default}}" alt="">
+  </mat-card-header>
+</mat-card>

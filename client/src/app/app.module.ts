@@ -23,6 +23,7 @@ import { MatOptionModule } from '@angular/material/core';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list'
 
 import { UserListComponent } from './users/user-list.component';
 import { HomeComponent } from './home/home.component';
@@ -34,6 +35,8 @@ import { UserProfileComponent } from './users/user-profile.component';
 import { AddUserComponent } from './users/add-user.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { DataService } from './services/data.service';
+import { HeaderComponent } from './header.component';
+import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 
 const MATERIAL_MODULES: any[] = [
   MatListModule,
@@ -51,7 +54,8 @@ const MATERIAL_MODULES: any[] = [
   MatFormFieldModule,
   MatDividerModule,
   MatRadioModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatGridListModule
 ];
 
 @NgModule({
@@ -63,6 +67,8 @@ const MATERIAL_MODULES: any[] = [
     UserProfileComponent,
     AddUserComponent,
     PokemonListComponent,
+    HeaderComponent,
+    PokemonCardComponent,
   ],
   imports: [
     BrowserModule,
