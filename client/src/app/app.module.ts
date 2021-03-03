@@ -32,6 +32,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { UserCardComponent } from './users/user-card.component';
 import { UserProfileComponent } from './users/user-profile.component';
 import { AddUserComponent } from './users/add-user.component';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { DataService } from './services/data.service';
 
 const MATERIAL_MODULES: any[] = [
   MatListModule,
@@ -60,6 +62,7 @@ const MATERIAL_MODULES: any[] = [
     UserCardComponent,
     UserProfileComponent,
     AddUserComponent,
+    PokemonListComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,8 @@ const MATERIAL_MODULES: any[] = [
     LayoutModule,
   ],
   providers: [
-    UserService
+    UserService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })
