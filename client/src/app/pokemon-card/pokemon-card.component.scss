@@ -1,11 +1,19 @@
+.pokemon-card {
+  max-width: 400px;
+  margin-top:10px;
+}
 
-.pokemon-cards-container {
+.pokemon-card-container {
   width: 100%;
   position: relative;
-}
-
-.pokemon-card {
-  margin-bottom: 10px;
 
 }
 
+.types{
+  text-align: center;
+}
+
+.pokemon-names{
+  text-align: center;
+
+}
