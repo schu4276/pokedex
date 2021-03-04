@@ -16,4 +16,8 @@ export class PokemonCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getType(pokemon) {
+    return this.pokemon.types[0].type.name[0] + this.pokemon.types[0].type.name.substring(1);
+  }
+
 }
