@@ -14,7 +14,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getPokemon(){
-    return this.http.get(this.pokeUrl+`?limit=10`);
+    return this.http.get(this.pokeUrl+`?limit=11`);
   }
 
   getPokemonDetails(name: string){

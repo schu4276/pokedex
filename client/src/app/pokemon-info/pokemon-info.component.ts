@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Pokemon } from '../pokemon-card/pokemon';
 import { DataService } from '../services/data.service';
 import {MatButtonModule} from '@angular/material/button';
+import { ArrayDataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-pokemon-info',
@@ -34,6 +35,15 @@ export class PokemonInfoComponent implements OnInit, OnDestroy {
 
     getType(pokemon) {
       return this.pokemon.types[0].type.name[0] + this.pokemon.types[0].type.name.substring(1);
+    }
+    getAbilities(pokemon){
+      const abilities: any =[];
+      // eslint-disable-next-line @typescript-eslint/prefer-for-of
+      for(let i=0; i< this.pokemon.abilities.length; i++){
+        abilities.push(this.pokemon.abilities[i].ability.name);
+      }
+      ;
+      return abilities;
     }
 
     upper(word: string) {

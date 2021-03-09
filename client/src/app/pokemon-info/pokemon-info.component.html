@@ -1,8 +1,10 @@
 <div class="pokemon-details" >
   <h1 *ngIf="this.pokemon">{{upper(this.pokemon.name)}}</h1>
-  <p>
-    {{upper(this.getType(pokemon))}} Type Pokemon
-  </p>
+  <div>
+    <h3>{{upper(this.getType(pokemon))}} Type Pokemon</h3>
+    <h3> Abilities: {{this.getAbilities(pokemon)}}</h3>
+
+  </div>
 </div>
 
 <button mat-raised-button class="button" routerLink="/">Return To Dex</button  >
