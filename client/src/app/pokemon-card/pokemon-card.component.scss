@@ -7,6 +7,7 @@
   width: 100%;
   position: relative;
 
+
 }
 
 .types{
@@ -16,4 +17,15 @@
 .pokemon-names{
   text-align: center;
 
+}
+
+a {
+  text-align: center;
+  color:black;
+  text-decoration: none;
+
+}
+
+a :hover {
+  color:lightgray;
 }

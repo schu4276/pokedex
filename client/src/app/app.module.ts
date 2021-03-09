@@ -37,6 +37,7 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { DataService } from './services/data.service';
 import { HeaderComponent } from './header.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
 
 const MATERIAL_MODULES: any[] = [
   MatListModule,
@@ -69,6 +70,7 @@ const MATERIAL_MODULES: any[] = [
     PokemonListComponent,
     HeaderComponent,
     PokemonCardComponent,
+    PokemonInfoComponent,
   ],
   imports: [
     BrowserModule,
