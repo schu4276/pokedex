@@ -1,1 +1,8 @@
-<p>pokemon-info works!</p>
+<div class="pokemon-details" >
+  <h1 *ngIf="this.pokemon">{{upper(this.pokemon.name)}}</h1>
+  <p>
+    {{upper(this.getType(pokemon))}} Type Pokemon
+  </p>
+</div>
+
+<button mat-raised-button class="button">Return To Dex</button >
