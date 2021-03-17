@@ -5,6 +5,8 @@ import { Pokemon } from '../pokemon-card/pokemon';
 import { DataService } from '../services/data.service';
 import {MatButtonModule} from '@angular/material/button';
 import { ArrayDataSource } from '@angular/cdk/collections';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 @Component({
