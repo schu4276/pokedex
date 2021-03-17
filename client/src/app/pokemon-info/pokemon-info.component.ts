@@ -6,6 +6,7 @@ import { DataService } from '../services/data.service';
 import {MatButtonModule} from '@angular/material/button';
 import { ArrayDataSource } from '@angular/cdk/collections';
 
+
 @Component({
   selector: 'app-pokemon-info',
   templateUrl: './pokemon-info.component.html',
@@ -36,14 +37,29 @@ export class PokemonInfoComponent implements OnInit, OnDestroy {
     getType(pokemon) {
       return this.pokemon.types[0].type.name[0] + this.pokemon.types[0].type.name.substring(1);
     }
-    getAbilities(pokemon){
+    getAbilities(){
       const abilities: any =[];
       // eslint-disable-next-line @typescript-eslint/prefer-for-of
       for(let i=0; i< this.pokemon.abilities.length; i++){
         abilities.push(this.pokemon.abilities[i].ability.name);
       }
-      ;
       return abilities;
+    }
+    getForms(){
+      const forms: any =[];
+      const formArray = this.pokemon.forms;
+      for(const form of formArray ){
+        forms.push(form.name);
+      }
+      return forms;
+    }
+    getStats(){
+      const statMap = new Map();
+      const statArray = this.pokemon.stats;
+      for(const stat of statArray ){
+        statMap.set(stat.stat.name, stat.base_stat);
+      }
+      return statMap;
     }
 
     upper(word: string) {

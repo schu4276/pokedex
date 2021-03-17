@@ -2,8 +2,18 @@
   <h1 *ngIf="this.pokemon">{{upper(this.pokemon.name)}}</h1>
   <div>
     <h3>{{upper(this.getType(pokemon))}} Type Pokemon</h3>
-    <h3> Abilities: {{this.getAbilities(pokemon)}}</h3>
+    <h3> Abilities: {{this.getAbilities().join(' , ')}}</h3>
+    <h3> Forms: {{this.getForms().join(' , ')}}</h3>
     <img src="{{this.pokemon.sprites.front_default}}" alt="pokemon-pic"/>
+    <h3> Stats: </h3>
+    <ul>
+      <li>Attack:<span> {{this.getStats().get('attack')}}</span></li>
+      <li>HP:<span> {{this.getStats().get('hp')}}</span></li>
+      <li>Defense:<span> {{this.getStats().get('defense')}}</span></li>
+      <li>Special Attack:<span> {{this.getStats().get('special-attack')}}</span></li>
+      <li>Special Defence:<span> {{this.getStats().get('special-defense')}}</span></li>
+      <li>Speed:<span> {{this.getStats().get('speed')}}</span></li>
+    </ul>
 
   </div>
 </div>
