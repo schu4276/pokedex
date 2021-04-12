@@ -1,7 +1,17 @@
 <mat-card class=search-card>
-  <mat-label>Search</mat-label>
-  <input matInput data-test="pokemonInput" placeholder="Filter by name"
-  [(ngModel)]="pokemonName" (input)="updateFilter()">
+  <mat-form-field class=name-filter>
+    <input autocomplete="off" matInput data-test="pokemonInput" placeholder="Filter by name"
+    [(ngModel)]="pokemonName" (input)="updateFilter()">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="type-drop" >
+    <mat-label>Filter by Types</mat-label>
+    <mat-select [(ngModel)]="pokemonType" (ngModelChange)="updateFilter()" >
+      <mat-option *ngFor="let type of typesArray" [value]="type" class=options>
+        {{type}}
+      </mat-option >
+    </mat-select >
+  </mat-form-field>
 </mat-card>
 <div fxLayout="row wrap" fxLayoutGap="10px" class="pokemon-card-container">
   <app-pokemon-card  *ngFor="let pokemon of filteredPokemons" class="pokemon-card" [pokemon]="pokemon" pokemonfxFlex="1 1 280px"></app-pokemon-card>

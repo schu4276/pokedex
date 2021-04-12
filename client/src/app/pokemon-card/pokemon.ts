@@ -1,5 +1,4 @@
-import { stringify } from "@angular/compiler/src/util";
-import { Url } from "url";
+import { Url } from 'url';
 
 
 export interface Pokemon {
