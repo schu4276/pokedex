@@ -23,7 +23,7 @@ import { MatOptionModule } from '@angular/material/core';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatGridListModule} from '@angular/material/grid-list'
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { UserListComponent } from './users/user-list.component';
 import { HomeComponent } from './home/home.component';
@@ -39,6 +39,7 @@ import { HeaderComponent } from './header.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ItemsComponent } from './items/items.component';
 
 const MATERIAL_MODULES: any[] = [
   MatListModule,
@@ -73,6 +74,7 @@ const MATERIAL_MODULES: any[] = [
     HeaderComponent,
     PokemonCardComponent,
     PokemonInfoComponent,
+    ItemsComponent,
   ],
   imports: [
     BrowserModule,
