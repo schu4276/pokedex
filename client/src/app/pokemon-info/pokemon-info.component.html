@@ -1,0 +1,37 @@
+<div class="pokemon-details" >
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="pokemon-name" *ngIf="this.pokemon">{{upper(this.pokemon.name)}}</mat-card-title>
+      <mat-card-subtitle>{{upper(this.getType(pokemon))}} Type Pokemon</mat-card-subtitle>
+
+    </mat-card-header>
+
+  <mat-card-content>
+    <h3> Abilities: {{this.getAbilities().join(' , ')}}</h3>
+    <h3> Forms: {{this.getForms().join(' , ')}}</h3>
+    <img src="{{this.pokemon.sprites.front_default}}" alt="pokemon-pic"/>
+    <h3> Stats: </h3>
+    <div class="pokemon-stats">
+      <ul class="stat-list">
+        <li>Attack:<span> {{this.getStats().get('attack')}}</span></li>
+        <mat-progress-bar mode="determinate" value="{{this.getStats().get('attack')}}"></mat-progress-bar>
+        <li>HP:<span> {{this.getStats().get('hp')}}</span></li>
+        <mat-progress-bar mode="determinate" value="{{this.getStats().get('hp')}}"></mat-progress-bar>
+        <li>Defense:<span> {{this.getStats().get('defense')}}</span></li>
+        <mat-progress-bar mode="determinate" value="{{this.getStats().get('defense')}}"></mat-progress-bar>
+        <li>Special Attack:<span> {{this.getStats().get('special-attack')}}</span></li>
+        <mat-progress-bar mode="determinate" value="{{this.getStats().get('special-attack')}}"></mat-progress-bar>
+        <li>Special Defence:<span> {{this.getStats().get('special-defense')}}</span></li>
+        <mat-progress-bar mode="determinate" value="{{this.getStats().get('special-defense')}}"></mat-progress-bar>
+        <li>Speed:<span> {{this.getStats().get('speed')}}</span></li>
+        <mat-progress-bar mode="determinate" value="{{this.getStats().get('speed')}}"></mat-progress-bar>
+      </ul>
+    </div>
+
+
+  </mat-card-content>
+  </mat-card>
+
+</div>
+
+<button mat-raised-button class="button" routerLink="/">Return To Dex</button  >

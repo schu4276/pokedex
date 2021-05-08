@@ -23,6 +23,8 @@ import { MatOptionModule } from '@angular/material/core';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 import { UserListComponent } from './users/user-list.component';
 import { HomeComponent } from './home/home.component';
@@ -32,6 +34,15 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { UserCardComponent } from './users/user-card.component';
 import { UserProfileComponent } from './users/user-profile.component';
 import { AddUserComponent } from './users/add-user.component';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { DataService } from './services/data.service';
+import { HeaderComponent } from './header.component';
+import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ItemsComponent } from './items/items.component';
+import { ItemsCardComponent } from './items-card/items-card.component';
+import { ItemsDetailComponent } from './items-detail/items-detail.component';
 
 const MATERIAL_MODULES: any[] = [
   MatListModule,
@@ -49,7 +60,9 @@ const MATERIAL_MODULES: any[] = [
   MatFormFieldModule,
   MatDividerModule,
   MatRadioModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatGridListModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({
@@ -60,6 +73,13 @@ const MATERIAL_MODULES: any[] = [
     UserCardComponent,
     UserProfileComponent,
     AddUserComponent,
+    PokemonListComponent,
+    HeaderComponent,
+    PokemonCardComponent,
+    PokemonInfoComponent,
+    ItemsComponent,
+    ItemsCardComponent,
+    ItemsDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +93,8 @@ const MATERIAL_MODULES: any[] = [
     LayoutModule,
   ],
   providers: [
-    UserService
+    UserService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,31 @@
+.pokemon-card {
+  max-width: 400px;
+  margin-top:10px;
+}
+
+.pokemon-card-container {
+  width: 100%;
+  position: relative;
+
+
+}
+
+.types{
+  text-align: center;
+}
+
+.pokemon-names{
+  text-align: center;
+
+}
+
+a {
+  text-align: center;
+  color:black;
+  text-decoration: none;
+
+}
+
+a :hover {
+  color:lightgray;
+}
