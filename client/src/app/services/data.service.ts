@@ -10,11 +10,19 @@ import { Observable } from 'rxjs';
 export class DataService {
 
   pokeUrl = 'https://pokeapi.co/api/v2/pokemon';
+  itemUrl = 'https://pokeapi.co/api/v2/item'
 
   constructor(private http: HttpClient) { }
 
   getPokemon(){
     return this.http.get(this.pokeUrl+`?limit=300`);
+  }
+
+  getItems(){
+    return this.http.get(this.itemUrl+`?limit=300`);
+  }
+  getItemDetails(name: string){
+    return this.http.get(this.itemUrl+`/${name}`);
   }
 
   getPokemonDetails(name: string){
