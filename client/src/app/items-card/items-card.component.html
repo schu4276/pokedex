@@ -3,7 +3,7 @@
     <mat-card-header class="item-names" >
     </mat-card-header>
     <mat-card-content>
-      {{this.item.name[0].toUpperCase()+this.item.name.substring(1)}}
+      {{this.item.name[0].toUpperCase()+this.item.name.substring(1).replace('-', ' ')}}
       <img src="{{this.item.sprites.default}}" alt="item-pic">
     </mat-card-content>
   </a>
