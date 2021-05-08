@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class DataService {
 
   pokeUrl = 'https://pokeapi.co/api/v2/pokemon';
-  itemUrl = 'https://pokeapi.co/api/v2/item'
+  itemUrl = 'https://pokeapi.co/api/v2/item';
 
   constructor(private http: HttpClient) { }
 
