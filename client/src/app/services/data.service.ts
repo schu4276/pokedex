@@ -33,4 +33,8 @@ export class DataService {
     return this.http.get<Pokemon>(this.pokeUrl+'/'+name);
   }
 
+  getAbilityInfo(name: string): Observable<Pokemon>{
+    return this.http.get<Pokemon>('https://pokeapi.co/api/v2/ability/'+name);
+  }
+
 }
