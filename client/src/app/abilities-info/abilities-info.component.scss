@@ -1,0 +1,14 @@
+a{
+  text-decoration: none;
+  color: blue($color: #0d31c4)
+}
+a:hover{
+  color:lightgray;
+}
+a:visited{
+  color:(#734cce)
+}
+
+ul{
+  columns:3;
+}

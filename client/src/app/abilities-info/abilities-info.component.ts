@@ -22,8 +22,11 @@ export class AbilitiesInfoComponent implements OnInit {
         this.getAbilitySub.unsubscribe();
       }
       this.getAbilitySub = this.dataService.getAbilityInfo(this.name)
-      .subscribe(ability => this.ability = ability);
+      .subscribe(ability =>  this.ability = ability);
+
     });
   }
+
+
 
 }

@@ -1,2 +1,18 @@
-<p>abilities-info works!</p>
-<p>{{this.ability.name}}</p>
+<h2 style="text-transform: capitalize;">
+  {{this.ability.name}}
+</h2>
+
+<p class="ability-entries">
+{{this.ability.effect_entries[1].effect}}
+</p>
+<h2>Pokemon With This Ability:</h2>
+<ul class="pokemon-list">
+  <li *ngFor="let pokemon of this.ability.pokemon"
+  style="text-transform: capitalize;">
+    <a [routerLink]="['/pokemon',pokemon.pokemon.name]"
+    class="pokemon-link">
+      {{pokemon.pokemon.name}}
+    </a>
+  </li>
+</ul>
+
