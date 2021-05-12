@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  pokeUrl = 'https://pokeapi.co/api/v2/pokemon';
   itemUrl = 'https://pokeapi.co/api/v2/item';
 
   pokeUrl = 'https://pokeapi.co/api/v2/';
@@ -34,6 +33,7 @@ export class DataService {
   getPokemonByName(name: string): Observable<Pokemon>{
     return this.http.get<Pokemon>(this.pokeUrl+'pokemon/'+name);
   }
+
   filterPokemon(pokemons: any[], filters: { name?: string; type?: string }): any[] {
     let filteredPokemons = pokemons;
 
@@ -49,8 +49,16 @@ export class DataService {
     }
     return filteredPokemons;
   }
-  getItems(){
-    return this.http.get('https://pokeapi.co/api/v2/item');
+
+  filterItems(items: any[], filters: { name?: string}): any[] {
+    let filteredItems = items;
+
+    if(filters.name){
+      filters.name = filters.name.toLowerCase();
+      filteredItems = filteredItems.filter(pokemon => pokemon.name.toLowerCase().indexOf(filters.name)!== -1);
+    }
+
+    return filteredItems;
   }
 
   getAbilityInfo(name: string): Observable<Pokemon>{

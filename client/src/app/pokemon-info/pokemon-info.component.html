@@ -9,7 +9,8 @@
   <mat-card-content>
     <h3> Abilities:
        <li *ngFor="let ab of this.pokemon.abilities"
-       ><a [routerLink]="['/abilities', ab.ability.name]">{{ab.ability.name}}</a>
+       ><a [routerLink]="['/abilities', ab.ability.name]"
+       style="text-transform: capitalize; text-decoration: none;">{{ab.ability.name}}</a>
     </li></h3>
     <h3> Forms: {{this.getForms().join(' , ')}}</h3>
     <img src="{{this.pokemon.sprites.front_default}}" alt="pokemon-pic"/>
