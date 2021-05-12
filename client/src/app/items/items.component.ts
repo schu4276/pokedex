@@ -8,6 +8,8 @@ import { DataService } from '../services/data.service';
 })
 export class ItemsComponent implements OnInit {
   items: any[]=[];
+  public itemName: string;
+  public filteredItems: any[];
 
   constructor(private dataService: DataService) { }
 
@@ -18,9 +20,14 @@ export class ItemsComponent implements OnInit {
         this.dataService.getItemDetails(result.name)
         .subscribe((detailResponse: any) =>
         this.items.push(detailResponse));
+        this.updateFilter();
       });
     });
-    console.log(this.items);
+  }
+
+  public updateFilter(){
+    this.filteredItems = this.dataService.filterItems( this.items,
+       {name: this.itemName});
   }
 
 

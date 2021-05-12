@@ -1,5 +1,12 @@
+<mat-card >
+  <mat-form-field class=item-filter>
+    <input autocomplete="off" matInput data-test="pokemonInput" placeholder="Filter by name"
+    [(ngModel)]="itemName" (input)="updateFilter()">
+  </mat-form-field>
+</mat-card>
+
 <div fxLayout="row wrap" fxLayoutGap="10px" class="pokemon-card-container">
-  <app-items-card *ngFor="let item of this.items" class="item-card" [item]="item"
+  <app-items-card *ngFor="let item of this.filteredItems" class="item-card" [item]="item"
   fxFlex="1 1 160px" >
   </app-items-card>
 </div>

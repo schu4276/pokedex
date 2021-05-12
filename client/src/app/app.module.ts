@@ -43,6 +43,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ItemsComponent } from './items/items.component';
 import { ItemsCardComponent } from './items-card/items-card.component';
 import { ItemsDetailComponent } from './items-detail/items-detail.component';
+import { AbilitiesListComponent } from './abilities-list/abilities-list.component';
+import { AbilitiesInfoComponent } from './abilities-info/abilities-info.component';
 
 const MATERIAL_MODULES: any[] = [
   MatListModule,
@@ -80,6 +82,8 @@ const MATERIAL_MODULES: any[] = [
     ItemsComponent,
     ItemsCardComponent,
     ItemsDetailComponent,
+    AbilitiesListComponent,
+    AbilitiesInfoComponent,
   ],
   imports: [
     BrowserModule,
