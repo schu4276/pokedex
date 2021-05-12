@@ -25,6 +25,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+
 import { UserListComponent } from './users/user-list.component';
 import { HomeComponent } from './home/home.component';
 import { UserService } from './users/user.service';
@@ -40,6 +41,10 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ItemsComponent } from './items/items.component';
+import { ItemsCardComponent } from './items-card/items-card.component';
+import { ItemsDetailComponent } from './items-detail/items-detail.component';
+import { AbilitiesListComponent } from './abilities-list/abilities-list.component';
+import { AbilitiesInfoComponent } from './abilities-info/abilities-info.component';
 
 const MATERIAL_MODULES: any[] = [
   MatListModule,
@@ -59,7 +64,7 @@ const MATERIAL_MODULES: any[] = [
   MatRadioModule,
   MatSnackBarModule,
   MatGridListModule,
-  MatProgressBarModule
+  MatProgressBarModule,
 ];
 
 @NgModule({
@@ -75,6 +80,10 @@ const MATERIAL_MODULES: any[] = [
     PokemonCardComponent,
     PokemonInfoComponent,
     ItemsComponent,
+    ItemsCardComponent,
+    ItemsDetailComponent,
+    AbilitiesListComponent,
+    AbilitiesInfoComponent,
   ],
   imports: [
     BrowserModule,

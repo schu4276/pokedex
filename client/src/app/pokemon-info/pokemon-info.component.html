@@ -7,7 +7,10 @@
     </mat-card-header>
 
   <mat-card-content>
-    <h3> Abilities: {{this.getAbilities().join(' , ')}}</h3>
+    <h3> Abilities:
+       <li *ngFor="let ab of this.pokemon.abilities"
+       ><a [routerLink]="['/abilities', ab.ability.name]">{{ab.ability.name}}</a>
+    </li></h3>
     <h3> Forms: {{this.getForms().join(' , ')}}</h3>
     <img src="{{this.pokemon.sprites.front_default}}" alt="pokemon-pic"/>
     <h3> Stats: </h3>

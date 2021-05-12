@@ -1,0 +1,21 @@
+<button mat-fab [routerLink]="['/items']"
+color="primary">
+
+  <mat-icon  class="back-arrow">arrow_back</mat-icon>
+</button>
+
+<mat-card class="detail-card">
+<mat-card-title>
+  {{this.item.name.replace('-', ' ')}}
+  <img src="{{this.item.sprites.default}}" alt="item-pic">
+</mat-card-title>
+<mat-card-content>
+  <span>{{item.effect_entries[0].effect}}</span>
+  <div class="item-details">
+    <ul class="stat-list">
+      <li><span> {{this.item.flavor_text_entries[3].text}}</span></li>
+      <li>Cost:<span> {{this.item.cost}}</span></li>
+    </ul>
+  </div>
+</mat-card-content>
+</mat-card>

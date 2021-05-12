@@ -8,22 +8,19 @@ import { DataService } from '../services/data.service';
 })
 export class ItemsComponent implements OnInit {
   items: any[]=[];
-  filteredItems: any[];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getItems();
-  }
-
-  getItems(){
     this.dataService.getItems()
     .subscribe((response: any) => {
       response.results.forEach(result=>{
-       this.items.push(result.name);
+        this.dataService.getItemDetails(result.name)
+        .subscribe((detailResponse: any) =>
+        this.items.push(detailResponse));
       });
     });
-
+    console.log(this.items);
   }
 
 

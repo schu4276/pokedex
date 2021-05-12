@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
+  pokeUrl = 'https://pokeapi.co/api/v2/pokemon';
+  itemUrl = 'https://pokeapi.co/api/v2/item';
 
   pokeUrl = 'https://pokeapi.co/api/v2/';
 
@@ -16,6 +18,13 @@ export class DataService {
 
   getPokemon(){
     return this.http.get(this.pokeUrl+`pokemon?limit=10`);
+  }
+
+  getItems(){
+    return this.http.get(this.itemUrl+`?limit=300`);
+  }
+  getItemDetails(name: string){
+    return this.http.get(this.itemUrl+`/${name}`);
   }
 
   getPokemonDetails(name: string){
@@ -42,6 +51,10 @@ export class DataService {
   }
   getItems(){
     return this.http.get('https://pokeapi.co/api/v2/item');
+  }
+
+  getAbilityInfo(name: string): Observable<Pokemon>{
+    return this.http.get<Pokemon>('https://pokeapi.co/api/v2/ability/'+name);
   }
 
 }

@@ -19,6 +19,7 @@ export class PokemonInfoComponent implements OnInit, OnDestroy {
 
   pokemon: any;
   name: string;
+  abilities: any[];
   getPokemonSub: Subscription;
 
   constructor(private dataService: DataService, private route: ActivatedRoute,) { }
@@ -32,8 +33,10 @@ export class PokemonInfoComponent implements OnInit, OnDestroy {
         if (this.getPokemonSub) {
           this.getPokemonSub.unsubscribe();
         }
-        this.getPokemonSub = this.dataService.getPokemonDetails(this.name).subscribe(pokemon => this.pokemon = pokemon);
+        this.getPokemonSub = this.dataService.getPokemonDetails(this.name)
+        .subscribe(pokemon => this.pokemon = pokemon);
       });
+      this.getAbilities();
     }
 
     getType(pokemon) {
@@ -45,7 +48,7 @@ export class PokemonInfoComponent implements OnInit, OnDestroy {
       for(let i=0; i< this.pokemon.abilities.length; i++){
         abilities.push(this.pokemon.abilities[i].ability.name);
       }
-      return abilities;
+      this. abilities = abilities;
     }
     getForms(){
       const forms: any =[];
@@ -67,6 +70,7 @@ export class PokemonInfoComponent implements OnInit, OnDestroy {
     upper(word: string) {
       return word[0].toUpperCase()+word.substring(1);
     }
+
 
     ngOnDestroy(): void {
       if (this.getPokemonSub) {
